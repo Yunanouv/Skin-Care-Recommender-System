@@ -11,7 +11,7 @@ from PIL import Image
 skincare = pd.read_csv("export_skincare.csv", encoding='utf-8', index_col=None)
 
 # Header
-st.set_page_config(page_title="Skin Care Recommender System", page_icon=":blossom:", layout="wide",)
+st.set_page_config(page_title="Skin Care Recommender System", page_icon=":rose:", layout="wide",)
 
 # 1=sidebar menu, 2=horizontal menu, 3=horizontal menu w/ custom menu
 EXAMPLE_NO = 2
@@ -122,7 +122,7 @@ if selected == "Get Recommendation":
 
     # Choose a skin type
     # st = skin type
-    skin_type = last.selectbox(label='Your Skin Type : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
+    skintype = last.selectbox(label='Your Skin Type : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
     category_st_pt = category_pt[category_pt[skintype] == 1]
 
     # pilih keluhan
