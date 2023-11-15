@@ -123,7 +123,7 @@ if selected == "Get Recommendation":
     # Choose a skin type
     # st = skin type
     skin_type = last.selectbox(label='Your Skin Type : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
-    category_st_pt = category_pt[category_pt['skin_type'] == 1]
+    category_st_pt = category_pt[category_pt['skintype'] == 1]
 
     # pilih keluhan
     prob = st.multiselect(label='Skin Problems : ', options= ['Kulit Kusam', 'Jerawat', 'Bekas Jerawat','Pori-pori Besar', 'Flek Hitam', 'Garis Halus dan Kerutan', 'Komedo', 'Warna Kulit Tidak Merata', 'Kemerahan', 'Kulit Kendur'] )
