@@ -69,12 +69,12 @@ def streamlit_menu(example=1):
 selected = streamlit_menu(example=EXAMPLE_NO)
 
 if selected == "Skin Care":
-    st.title(f"Product Recommender {selected} :sparkles:")
+    st.title(f"{selected} Product Recommender :sparkles:")
     st.write('---') 
 
     st.write(
         """
-        ##### **The Skin Care Product Recommendation Application is one of implementations of Machine Learning that can provide skin care product recommendations according to your skin type and problems**
+        ##### **Aplikasi Rekomendasi Produk Perawatan Kulit merupakan salah satu implementasi Machine Learning yang dapat memberikan rekomendasi produk perawatan kulit sesuai dengan jenis dan permasalahan kulit Anda**
         """)
     
     #displaying a local video file
@@ -118,7 +118,12 @@ if selected == "Get Recommendation":
     # Choose a product product type category
     # pt = product type
     category = first.selectbox(label='Product Category : ', options= skincare['product_type'].unique() )
-    category_pt = skincare[skincare['tipe_produk'] == category]
+    category_pt = skincare[skincare['product_type'] == category]
+
+    # Choose a product product type category
+    # pt = brand
+    category = second.selectbox(label='Brand : ', options= skincare['brand'].unique() )
+    category_pt = skincare[skincare['product_type'] == category]
 
     # Choose a skin type
     # st = skin type
@@ -132,7 +137,7 @@ if selected == "Get Recommendation":
     # dari produk yg sudah di filter berdasarkan product type dan skin type(category_st_pt), kita akan ambil nilai yang unik di kolom notable_effects
     opsi_ne = category_st_pt['notable_effects'].unique().tolist()
     # notable_effects-notable_effects yang unik maka dimasukkan ke dalam variabel opsi_ne dan digunakan untuk value dalam multiselect yg dibungkus variabel selected_options di bawah ini
-    selected_options = st.multiselect('Manfaat yang Diinginkan : ',opsi_ne)
+    selected_options = st.multiselect('Notable Effects : ',opsi_ne)
     # hasil dari selected_options kita masukan ke dalam var category_ne_st_pt
     category_ne_st_pt = category_st_pt[category_st_pt["notable_effects"].isin(selected_options)]
 
