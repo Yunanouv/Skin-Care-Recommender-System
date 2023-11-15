@@ -1,4 +1,3 @@
-pip install --upgrade scikit-learn
 numpy
 tensorflow
 pandas
