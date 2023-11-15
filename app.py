@@ -181,7 +181,7 @@ if selected == "Get Recommendation":
     cosine_sim_df.sample(7, axis=1).sample(10, axis=0)
 
     # Membuat fungsi untuk mendapatkan rekomendasi
-    def skincare_recommendations(nama_produk, similarity_data=cosine_sim_df, items=skincare[['product_name', 'description']], k=5):
+    def skincare_recommendations(nama_produk, similarity_data=cosine_sim_df, items=skincare[['product_name', 'brand', 'description']], k=5):
 
         # Mengambil data dengan menggunakan argpartition untuk melakukan partisi secara tidak langsung sepanjang sumbu yang diberikan    
         # Dataframe diubah menjadi numpy
@@ -202,7 +202,6 @@ if selected == "Get Recommendation":
     if model_run:
         st.write('Berikut Rekomendasi Produk Serupa Lainnya Sesuai yang Kamu Inginkan')
         st.write(skincare_recommendations(product))
-        st.snow()
     
     
 if selected == "Skin Care 101":
