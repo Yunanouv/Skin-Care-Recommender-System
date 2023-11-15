@@ -11,7 +11,7 @@ from PIL import Image
 skincare = pd.read_csv("export_skincare.csv", encoding='utf-8', index_col=None)
 
 # Header
-st.set_page_config(page_title="Aplikasi Rekomendasi Produk Skin Care", page_icon=":blossom:", layout="wide",)
+st.set_page_config(page_title="Skin Care Recommender System", page_icon=":blossom:", layout="wide",)
 
 # 1=sidebar menu, 2=horizontal menu, 3=horizontal menu w/ custom menu
 EXAMPLE_NO = 2
@@ -69,12 +69,12 @@ def streamlit_menu(example=1):
 selected = streamlit_menu(example=EXAMPLE_NO)
 
 if selected == "Skin Care":
-    st.title(f"Aplikasi Rekomendasi Produk {selected} :sparkles:")
+    st.title(f"Product Recommender {selected} :sparkles:")
     st.write('---') 
 
     st.write(
         """
-        ##### **Aplikasi Rekomendasi Produk Skin Care merupakan salah satu implementasi Machine Learning yang dapat memberikan rekomendasi produk skin care sesuai dengan jenis dan juga permasalahan kulit Anda**
+        ##### **The Skin Care Product Recommendation Application is one of implementations of Machine Learning that can provide skin care product recommendations according to your skin type and problems**
         """)
     
     #displaying a local video file
@@ -117,16 +117,16 @@ if selected == "Get Recommendation":
 
     # Choose a product product type category
     # pt = product type
-    category = first.selectbox(label='Kategori Produk : ', options= skincare['tipe_produk'].unique() )
+    category = first.selectbox(label='Product Category : ', options= skincare['product_type'].unique() )
     category_pt = skincare[skincare['tipe_produk'] == category]
 
-    # Choose a skintype
+    # Choose a skin type
     # st = skin type
-    skin_type = last.selectbox(label='Tipe Kulit Kamu : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
+    skin_type = last.selectbox(label='Your Skin Type : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
     category_st_pt = category_pt[category_pt[skin_type] == 1]
 
     # pilih keluhan
-    prob = st.multiselect(label='Permasalahan Kulit Kamu : ', options= ['Kulit Kusam', 'Jerawat', 'Bekas Jerawat','Pori-pori Besar', 'Flek Hitam', 'Garis Halus dan Kerutan', 'Komedo', 'Warna Kulit Tidak Merata', 'Kemerahan', 'Kulit Kendur'] )
+    prob = st.multiselect(label='Skin Problems : ', options= ['Kulit Kusam', 'Jerawat', 'Bekas Jerawat','Pori-pori Besar', 'Flek Hitam', 'Garis Halus dan Kerutan', 'Komedo', 'Warna Kulit Tidak Merata', 'Kemerahan', 'Kulit Kendur'] )
 
     # Choose notable_effects
     # dari produk yg sudah di filter berdasarkan product type dan skin type(category_st_pt), kita akan ambil nilai yang unik di kolom notable_effects
