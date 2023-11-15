@@ -122,7 +122,7 @@ if selected == "Get Recommendation":
 
     # Choose a product product type category
     # pt = brand
-    category = second.selectbox(label='Brand : ', options= skincare['brand'].unique() )
+    category = first.selectbox(label='Brand : ', options= skincare['brand'].unique() )
     category_pt = skincare[skincare['product_type'] == category]
 
     # Choose a skin type
