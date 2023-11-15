@@ -120,11 +120,6 @@ if selected == "Get Recommendation":
     category = first.selectbox(label='Product Category : ', options= skincare['product_type'].unique() )
     category_pt = skincare[skincare['product_type'] == category]
 
-    # Choose a product product type category
-    # pt = brand
-    category = first.selectbox(label='Brand : ', options= skincare['brand'].unique() )
-    category_pt = skincare[skincare['product_type'] == category]
-
     # Choose a skin type
     # st = skin type
     skin_type = last.selectbox(label='Your Skin Type : ', options= ['Normal', 'Dry', 'Oily', 'Combination', 'Sensitive'] )
