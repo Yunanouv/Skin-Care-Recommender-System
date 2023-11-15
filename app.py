@@ -151,7 +151,7 @@ if selected == "Get Recommendation":
     tf.fit(skincare['notable_effects']) 
 
     # Mapping array dari fitur index integer ke fitur nama
-    tf.get_feature_names()
+    tf.get_feature_names_out()
 
     # Melakukan fit lalu ditransformasikan ke bentuk matrix
     tfidf_matrix = tf.fit_transform(skincare['notable_effects']) 
@@ -167,7 +167,7 @@ if selected == "Get Recommendation":
     # Baris diisi dengan nama produk
     pd.DataFrame(
         tfidf_matrix.todense(), 
-        columns=tf.get_feature_names(),
+        columns=tf.get_feature_names_out(),
         index=skincare.product_name
     ).sample(shape[1], axis=1).sample(10, axis=0)
 
