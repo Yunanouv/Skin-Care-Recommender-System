@@ -1,4 +1,4 @@
-from numpy.core.fromnumeric import prod
+ortfrom numpy.core.fromnumeric import prod
 import tensorflow as tf
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import streamlit as st
 
 # Import the Dataset 
-skincare = pd.read_csv("skincare.csv", encoding='utf-8', index_col=None)
+skincare = pd.read_csv("export_skincare.csv", encoding='utf-8', index_col=None)
 
 # Header
 st.set_page_config(page_title="Aplikasi Rekomendasi Produk Skin Care", page_icon=":blossom:", layout="wide",)
