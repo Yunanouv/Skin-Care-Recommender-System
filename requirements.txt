@@ -1,7 +1,7 @@
 numpy
 tensorflow
 pandas
-scikit-learn
+scikit-learn==1.0.1
 streamlit
 streamlit_option_menu
 pillow
