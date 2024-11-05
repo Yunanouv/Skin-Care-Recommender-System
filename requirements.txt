@@ -2,7 +2,7 @@ numpy==1.21.4
 tensorflow==2.7.0
 pandas==1.3.4
 scikit-learn==1.0.1
-streamlit==1.2.0
+streamlit
 streamlit_option_menu==0.3.2
 pillow==8.4.0
 protobuf==3.20.3
