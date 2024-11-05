@@ -5,3 +5,4 @@ scikit-learn==1.0.1
 streamlit==1.2.0
 streamlit_option_menu==0.3.2
 pillow==8.4.0
+protobuf==3.20.3
